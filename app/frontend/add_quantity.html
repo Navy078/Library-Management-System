@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Add Quantity</title>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h2 style="text-align: center;margin-top: 30px; margin-bottom: 30px;">Add Quantity</h2>
+        {% if msg %}
+            <div class="alert alert-success col-sm-7" role="alert" style="margin-left: 250px;">
+                {{ msg }}
+            </div>
+        {% endif %}
+        {% for error in errors %}
+            <div class="alert alert-danger col-sm-7" role="alert" style="margin-left: 250px;">
+                {{ error }}
+            </div>
+        {% endfor %}
+        <form method="POST">
+            <div class="mb-3" style="margin-top: 20px; margin-left: 400px;">
+                <!-- <label class="col-sm-2" for="title" required class="form-label" aria-readonly="true"><b>Book Title</b></label> -->
+                <input class="col-sm-6" type="text" required class="form-control" name="title" placeholder="{{book.title}}" readonly>
+            </div>
+            <div class="mb-3" style="margin-top: 20px; margin-left: 400px;">
+                <!-- <label class="col-sm-2" for="description" required class="form-label" aria-readonly="true"><b>Book Description</b></label> -->
+                <input class="col-sm-6" type="text" required class="form-control" name="description" placeholder="{{book.description}}" readonly>
+            </div>
+            <div class="mb-3" style="margin-top: 20px; margin-left: 400px;">
+              <!-- <label class="col-sm-2" for="quantity" required class="form-label"><b>Quantity</b></label> -->
+              <input class="col-sm-6" type="number" required class="form-control" name="quantity" placeholder="Enter quantity">
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px; margin-left: 600px;">submit</button>
+        </form>
+    </div>
+{% endblock %}

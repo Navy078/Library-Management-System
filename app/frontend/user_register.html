@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>User Registration</title>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h2 style="text-align: center;margin-top: 30px; margin-bottom: 30px;">User Registration</h2>
+        {% for error in errors %}
+            <div class="alert alert-danger col-sm-7" role="alert" style="margin-left: 250px;">
+                {{ error }}
+            </div>
+        {% endfor %}
+        <form method="POST">
+            <div class="mb-3" style="margin-top: 30px; margin-left: 250px;">
+                <label for="name" required class="col-sm-2" class="form-label"><b>Name</b></label>
+                <input type="name" required class="col-sm-6" class="form-control" name="name" placeholder="Enter name">
+              </div>
+            <div class="mb-3" style="margin-top: 20px; margin-left: 250px;">
+              <label class="col-sm-2" for="email" required class="form-label"><b>Email address</b></label>
+              <input class="col-sm-6" type="email" required class="form-control" name="email" placeholder="Enter email">
+            </div>
+            <div class="mb-3" style="margin-top: 20px; margin-left: 250px;">
+              <label class="col-sm-2" for="password" required class="form-label"><b>Password</b></label>
+              <input class="col-sm-6" type="password" required class="form-control" name="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px; margin-left: 600px;">Register!</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title> Homepage </title>
+{% endblock %}
+
+{% block content %}
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" 
+         style="background-image: url('static/images/library1.jpeg');">
+    <h1 class="mb-3 h2">Library Management System</h1>
+
+    <p>
+        This library management system is designed to manage the movement of books and maintain the records of the users in a library. 
+        The user can add a book in library and also issue a particular book.
+
+    </p>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h1 style="text-align: center; color: blue;">Books in Library</h1>
+        </div>
+        <div class="column" style="text-align: right">
+            {% if user %}
+                <img src="static/images/profile.png" class="rounded" style="height: 100px;" alt="profile image">
+                <a href="/profile/{{user.id}}" class="btn btn-outline-info" role="button" aria-pressed="true">Your Profile</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if msg %}
+        <div class="alert alert-success col-sm-7" role="alert" style="margin-left: 250px;">
+            {{ msg }}
+        </div>
+    {% endif %} 
+    <div class="container">
+        <div class="row">
+            {% for book in books %}
+            <div class="col-lg-4 col-md-4" style="text-align: center;"> 
+                {% include 'card.html' %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>      
+{% endblock %}

@@ -1,0 +1,9 @@
+<h3 style="float: left; color: blue; margin-top: 20px;">Books issued</h3>
+<div class="card" style="width: 18rem; margin-top: 20px;">
+    <div class="card-body">
+      <h5 class="card-title">Book Id: {{ book.book_id }}</h5>
+      <a href="/issue_detail/{{book.issue_id}}" class="btn btn-info">Read More</a>
+      {% include "return_book_popup.html" %}
+      <!-- <a href="/return_book/{{book.issue_id}}" class="btn btn-danger">Return Book</a> -->
+    </div>
+  </div>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title> Your Profile </title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;margin-top: 30px; margin-bottom: 10px;">Your Profile</h1>
+    {% if msg %}
+        <div class="alert alert-success col-sm-7" role="alert" style="margin-left: 250px;">
+            {{ msg }}
+        </div>
+    {% endif %}
+    <div class="container">
+        <table class="table" style="text-align: center;">
+            <thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ID</th>
+                        <td>{{ user.id }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>{{ user.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Books issued</th>
+                        <td>{{ length }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Late Fees(in Rs)</th>
+                        <td>{{ fees }}</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+        <div class="row">
+            {% for book in books %}
+            <div class="col-lg-4 col-md-4" style="text-align: center;"> 
+                {% include 'profile_card.html' %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>      
+{% endblock %}

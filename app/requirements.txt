@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+passlib
+pydantic
+bcrypt
+python-jose
+python-multipart
+jinja2
+fastapi_login
+streamlit
+streamlit-option-menu
+streamlit-lottie
+streamlit-authenticator
+pyyaml
+aiofiles
+pylint

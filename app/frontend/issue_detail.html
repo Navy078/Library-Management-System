@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Issue Details</title>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1 style="text-align: center;margin-top: 30px; margin-bottom: 30px;">Issue detail</h1>
+        {% for error in errors %}
+            <div class="alert alert-danger col-sm-7" role="alert" style="margin-left: 250px;">
+                {{ error }}
+            </div>
+        {% endfor %}
+        <table class="table" style="text-align: center;">
+            <thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Issue ID</th>
+                        <td>{{ issue.issue_id }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Book id</th>
+                        <td>{{ issue.book_id }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Book title</th>
+                        <td>{{ book.title }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Book Description</th>
+                        <td>{{ book.description }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Issue date</th>
+                        <td>{{ issue.created_on }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last date</th>
+                        <td>{{ issue.last_date }}</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+{% endblock %}

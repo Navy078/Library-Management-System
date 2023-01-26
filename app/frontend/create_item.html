@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	<title>Create Item</title>
+{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+		<h2 style="text-align: center;margin-top: 30px; margin-bottom: 30px;">Add a book</h2>
+		{% for error in errors %}
+			<div class="alert alert-danger col-sm-7" role="alert" style="margin-left: 250px;">
+  				{{ error }}
+			</div>
+		{% endfor %}
+		<form method="POST">
+		  <div class="mb-3" style="margin-top: 20px; margin-left: 250px;">
+		    <label class="col-sm-2" for="title" class="form-label"><b>Book Title</b></label>
+		    <input class="col-sm-6" type="text" class="form-control" required name="title" placeholder="Enter book title">
+		  </div>
+		  <div class="mb-3" style="margin-top: 20px; margin-left: 250px;">
+    		<label class="col-sm-2" for="description" class="form-label"><b>Book Description</b></label>
+    		<textarea class="col-sm-6"class="form-control" required name="description" placeholder="Enter book description"></textarea>
+  		  </div>
+		  <div class="mb-3" style="margin-top: 20px; margin-left: 250px;">
+		    <label class="col-sm-2" for="title" class="form-label"><b>Quantity</b></label>
+		    <input class="col-sm-6" type="number" class="form-control" required name="quantity" placeholder="Enter quantity">
+		  </div>
+  		  <button type="submit" class="btn btn-outline-primary" style="margin-top: 20px; margin-left: 600px;">Submit</button>
+		</form>
+	</div>
+{% endblock %}
+
+
